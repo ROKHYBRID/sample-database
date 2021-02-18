@@ -9,7 +9,7 @@ CREATE TABLE `tb_menu` (
     `created_datetime`  DATETIME                    NOT NULL,
     `modified_datetime` DATETIME                    NOT NULL,
     PRIMARY KEY (`id`),
-    CONSTRAINT `fk_tb_menu_parent_id` FOREIGN KEY (`parent_id`) REFERENCES `tb_menu` (`id`)
-    CONSTRAINT `un_tb_menu_parent_id_value` UNIQUE (`parent_id`, `value`)
+    CONSTRAINT `fk_tb_menu_parent_id` FOREIGN KEY (`parent_id`) REFERENCES `tb_menu` (`id`),
+    CONSTRAINT `un_tb_menu_parent_id_value` UNIQUE (`parent_id`, `value`),
     CONSTRAINT `un_tb_menu_parent_id_ranking` UNIQUE (`parent_id`, `ranking`)
 );
